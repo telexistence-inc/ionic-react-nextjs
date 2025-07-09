@@ -23,11 +23,17 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/ionic-nextjs-app/node_modules/.bin/next",
-      "args": ["dev"],
+      "args": [
+        "dev"
+      ],
       "cwd": "${workspaceFolder}/ionic-nextjs-app",
       "console": "integratedTerminal",
-      "skipFiles": ["<node_internals>/**"],
-      "runtimeArgs": ["--inspect=9229"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "runtimeArgs": [
+        "--inspect=9229"
+      ],
       "restart": true
     }
   ]

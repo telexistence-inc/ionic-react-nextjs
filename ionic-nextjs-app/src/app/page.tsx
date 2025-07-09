@@ -14,17 +14,52 @@ import {
   IonItem,
   IonLabel,
   IonList,
-  IonText
+  IonText,
+  IonMenu,
+  IonMenuButton,
+  IonIcon,
+  IonSplitPane
 } from '@ionic/react';
+import { home, business, settings, logOut } from 'ionicons/icons';
 
 export default function Home() {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Ionic Next.js App</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <>
+      <IonMenu contentId="main-content">
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonList>
+            <IonItem routerLink="/home">
+              <IonIcon icon={home} slot="start" />
+              <IonLabel>Home</IonLabel>
+            </IonItem>
+            <IonItem routerLink="/products">
+              <IonIcon icon={business} slot="start" />
+              <IonLabel>Products</IonLabel>
+            </IonItem>
+            <IonItem routerLink="/settings">
+              <IonIcon icon={settings} slot="start" />
+              <IonLabel>Settings</IonLabel>
+            </IonItem>
+            <IonItem>
+              <IonIcon icon={logOut} slot="start" />
+              <IonLabel>Logout</IonLabel>
+            </IonItem>
+          </IonList>
+        </IonContent>
+      </IonMenu>
+      
+      <IonPage id="main-content">
+        <IonHeader>
+          <IonToolbar>
+            <IonMenuButton slot="start" />
+            <IonTitle>Ionic Next.js App</IonTitle>
+          </IonToolbar>
+        </IonHeader>
       <IonContent fullscreen className="ion-padding">
         <IonHeader collapse="condense">
           <IonToolbar>
@@ -82,6 +117,7 @@ export default function Home() {
           </IonButton>
         </div>
       </IonContent>
-    </IonPage>
+      </IonPage>
+    </>
   );
 }

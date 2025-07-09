@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@ionic/react": "^8.6.3",
-    "@ionic/react-router": "^8.6.3",
     "ionicons": "^8.0.13",
     "next": "15.3.5",
     "react": "^19.0.0",

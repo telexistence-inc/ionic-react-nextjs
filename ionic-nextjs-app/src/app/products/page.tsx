@@ -28,11 +28,13 @@ import {
 } from '@ionic/react';
 import { list, grid, star, home } from 'ionicons/icons';
 import { dummyProducts, Product } from '@/data/products';
+import { useRouter } from 'next/navigation';
 
 type ViewMode = 'list' | 'grid';
 
 export default function ProductsPage() {
   const [viewMode, setViewMode] = useState<ViewMode>('list');
+  const router = useRouter();
 
   const ProductListItem = ({ product }: { product: Product }) => (
     <IonItem>
@@ -91,7 +93,7 @@ export default function ProductsPage() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonButton routerLink="/" fill="clear">
+            <IonButton onClick={() => router.push('/')} fill="clear">
               <IonIcon icon={home} />
             </IonButton>
           </IonButtons>

@@ -21,8 +21,15 @@ import {
   IonSplitPane
 } from '@ionic/react';
 import { home, business, settings, logOut } from 'ionicons/icons';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
+
   return (
     <>
       <IonMenu contentId="main-content">
@@ -33,19 +40,19 @@ export default function Home() {
         </IonHeader>
         <IonContent>
           <IonList>
-            <IonItem routerLink="/home">
+            <IonItem button onClick={() => handleNavigation('/')}>
               <IonIcon icon={home} slot="start" />
               <IonLabel>Home</IonLabel>
             </IonItem>
-            <IonItem routerLink="/products">
+            <IonItem button onClick={() => handleNavigation('/products')}>
               <IonIcon icon={business} slot="start" />
               <IonLabel>Products</IonLabel>
             </IonItem>
-            <IonItem routerLink="/settings">
+            <IonItem button onClick={() => handleNavigation('/settings')}>
               <IonIcon icon={settings} slot="start" />
               <IonLabel>Settings</IonLabel>
             </IonItem>
-            <IonItem>
+            <IonItem button>
               <IonIcon icon={logOut} slot="start" />
               <IonLabel>Logout</IonLabel>
             </IonItem>
@@ -112,7 +119,7 @@ export default function Home() {
         </IonList>
 
         <div style={{ padding: '16px' }}>
-          <IonButton expand="block" routerLink="/products">
+          <IonButton expand="block" onClick={() => handleNavigation('/products')}>
             View Products
           </IonButton>
         </div>

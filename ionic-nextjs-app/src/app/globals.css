@@ -1,0 +1,34 @@
+/* Global styles for Ionic Next.js app */
+
+/* Fix for Next.js layout with Ionic */
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Reset body styles for Ionic */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Ensure Ionic components display properly */
+ion-app {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  contain: layout size style;
+}
+
+ion-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  contain: layout size style;
+}

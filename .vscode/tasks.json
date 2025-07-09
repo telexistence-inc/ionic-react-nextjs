@@ -1,0 +1,115 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "group": "build",
+      "label": "npm: dev",
+      "detail": "Start development server",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}/ionic-nextjs-app"
+        ],
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*Ready in.*"
+        }
+      }
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "npm: build",
+      "detail": "Build the application for production",
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "group": "build",
+      "label": "npm: start",
+      "detail": "Start production server",
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "dependsOn": "npm: build"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "group": "test",
+      "label": "npm: lint",
+      "detail": "Run ESLint to check code quality",
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["install"],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Build",
+      "type": "shell",
+      "command": "rm",
+      "args": ["-rf", ".next"],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}/ionic-nextjs-app"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build and Start",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "npm: build",
+        "npm: start"
+      ],
+      "group": "build",
+      "label": "Build and Start Production"
+    }
+  ]
+}

@@ -139,20 +139,13 @@ Before adding Next.js, ask yourself if you actually have these problems:
    - More configuration files
    - More things that can break
 
-2. **Performance on Mobile/Desktop**
-   ```
-   App Size: 8MB → 15MB (+87%)
-   Startup Time: 1.2s → 2.8s (+133%)
-   Memory Usage: 60MB → 110MB (+83%)
-   ```
-
-3. **Consistency**
+2. **Consistency**
    - Navigation behaves differently on web vs mobile
    - Features available on web but not mobile (API routes)
    - Different deployment processes
    - Platform-specific bugs
 
-4. **Development Speed**
+3. **Development Speed**
    - Longer build times
    - More complex debugging
    - Need to test on more configurations
@@ -162,7 +155,7 @@ Before adding Next.js, ask yourself if you actually have these problems:
 
 If you still want to proceed, here's what migration involves:
 
-### Step 1: Routing Nightmare
+### Step 1: Routing
 ```typescript
 // Your current Ionic Router
 <IonRouterOutlet>

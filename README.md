@@ -317,7 +317,3 @@ Imagine maintaining this hybrid setup for a year:
 ## License
 
 This project is proprietary to Telexistence Inc.
-
-## Support
-
-For internal support, please contact the development team.

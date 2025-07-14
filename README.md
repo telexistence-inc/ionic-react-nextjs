@@ -209,11 +209,7 @@ Consider Next.js only if ALL of these apply:
    - API aggregation layer
    - Real-time features (WebSockets)
 
-3. **You Accept the Trade-offs**
-   - Larger mobile app size is OK
-   - Slower mobile performance is acceptable
-   - Team can handle complexity
-   - Have resources for platform-specific optimizations
+
 
 ## 🚀 Better Alternatives
 
@@ -304,20 +300,8 @@ npx cap sync
 - **[TypeScript](https://www.typescriptlang.org/)** - Type safety and better DX
 - **[Ionicons](https://ionic.io/ionicons)** - Icon library
 
-## Development Tips
 
-1. **SPA Navigation**: All navigation uses Next.js router (`useRouter`) for SPA behavior
-2. **Ionic Components**: Use Ionic components for consistent mobile UI
-3. **Responsive Design**: Test on different screen sizes using browser dev tools
-4. **TypeScript**: Leverage TypeScript for better code quality
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 
 ## One Year Later Perspective
